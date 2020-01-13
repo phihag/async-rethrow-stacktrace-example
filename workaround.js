@@ -1,8 +1,9 @@
 async function crash() {
+    const err = new Error('rethrow');
     try {
         await (async () => {throw new Error('dead');})();
     } catch (e) {
-        throw new Error('rethrow');
+        throw err;
     }
 }
 
