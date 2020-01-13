@@ -7,6 +7,7 @@ async function crash() {
 }
 
 async function foo() {
+    await new Promise(resolve => setTimeout(() => resolve(), 1));
     await crash();
 }
 
